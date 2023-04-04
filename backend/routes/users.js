@@ -22,6 +22,11 @@ router.post('/', function (req, res) {
       if (err) {
         console.log('error: ', err);
       }
+      // Check if db response is []
+      else if (data.length === 0) {
+        res.status(404).json('Username or Password is incorrect');
+        return;
+      }
       console.log('users in db: ', data);
       res.json(data)
     });
