@@ -9,7 +9,8 @@ require('dotenv').config()
 const connection = require('./conn');
 
 const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
+const usersRouter = require('./routes/users');
+const documentsRouter = require('./routes/documents')
 
 const app = express();
 
@@ -20,7 +21,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/login', loginRouter);
+app.use('/api/', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/documents', documentsRouter);
 
 module.exports = app;
