@@ -6,8 +6,8 @@ const router = express.Router();
 
 router.post('/', function (req, res) {
 
-  const userName = req.body.userName
-  const pw = req.body.password
+  const userName = connection.escape(req.body.userName);
+  const pw = connection.escape(req.body.password);
 
   console.log(userName + ' ' + pw);
 
@@ -16,7 +16,7 @@ router.post('/', function (req, res) {
       console.log('error: ', err)
     }
 
-    const sql = `SELECT uuid FROM users WHERE userName = "${userName}" AND userPassword = "${pw}"`
+    const sql = `SELECT uuid FROM users WHERE userName = ${userName} AND userPassword = ${pw}`
 
     connection.query(sql, (err, data) => {
       if (err) {

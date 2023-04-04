@@ -9,3 +9,16 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/api/documents
+
+###
+
+POST http://localhost:3000/api/documents
+Content-Type: application/json
+
+{
+  "title": "Second post - test",
+  "body": "This Post was created with rest client",
+  "author": "4eb53cd6-3b91-4c46-83de-3b49e8b0df31"
+}
+
+###

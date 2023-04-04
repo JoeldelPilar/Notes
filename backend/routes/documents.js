@@ -30,4 +30,31 @@ router.get('/', function (req, res) {
 
 });
 
+// Save document / Post to db
+
+router.post('/', (req, res) => {
+
+  const title = connection.escape(req.body.title);
+  const body = connection.escape(req.body.body);
+  const author = connection.escape(req.body.author); // logged in user uuid
+
+  connection.connect((err) => {
+    if (err) {
+      console.log('error: ', err)
+    }
+
+    const sql = `INSERT INTO documents (title, body, author) VALUES (${title}, ${body}, ${author})`
+
+    connection.query(sql, (err, data) => {
+      if (err) {
+        console.log('error: ', err);
+      }
+      console.log('Docs in db: ', data);
+      res.json(data)
+    });
+
+  });
+
+});
+
 module.exports = router;
