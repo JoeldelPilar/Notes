@@ -9,10 +9,14 @@
 
 <script setup>
 import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import NoteService from '../services/NoteService'
+
+const router = useRouter()
 
 function logout() {
   localStorage.removeItem('token')
+  router.push('/')
 }
 
 onMounted(async () => {
