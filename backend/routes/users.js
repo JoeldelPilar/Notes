@@ -29,7 +29,7 @@ router.post('/', function (req, res) {
       }
       // Check if db response is []
       else if (data.length === 0) {
-        res.status(404).json('email is incorrect');
+        res.status(202).json('Check your email inbox to finish logging in.');
         return;
       }
       if (data[0].userEmail === userEmail) {

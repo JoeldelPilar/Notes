@@ -22,8 +22,7 @@ import { onMounted, ref } from 'vue'
 import NoteService from '../services/NoteService'
 
 onMounted(() => {
-  const token = localStorage.getItem('token')
-  console.log(token)
+  // const token = localStorage.getItem('token')
 })
 
 const showLogin = ref(true)
@@ -33,15 +32,16 @@ const loginInput = ref()
 async function login() {
   try {
     const loginResult = await NoteService.loginUser(loginInput.value)
-
-    // console.log(loginResult)
-
+    console.log(loginResult)
     if (loginResult.status === 200) {
       showLogin.value = false
       loginMessage.value = loginResult.data.message
+    } else if (loginResult.status === 202) {
+      showLogin.value = false
+      loginMessage.value = loginResult.data
     }
   } catch (error) {
-    console.log('Error message: ', error)
+    console.log('Error message: ', 'Something went wrong when logging in, please try again.')
   }
 }
 </script>

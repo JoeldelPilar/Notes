@@ -57,6 +57,7 @@ function editDocument() {
 <style scoped>
 .document-list {
   position: relative;
+  cursor: pointer;
 }
 
 .modal {

@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     }
 
     const sql = `
-                SELECT documents.title, documents.body, users.userName 
+                SELECT documents.id, documents.title, documents.body, users.userName 
                 FROM documents
                 JOIN users 
                 ON documents.author = users.uuid
