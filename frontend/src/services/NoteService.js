@@ -20,5 +20,9 @@ export default {
 
   getDocuments() {
     return apiClient.get('/documents')
+  },
+
+  saveDocument(document) {
+    return apiClient.post('/documents', document)
   }
 }
