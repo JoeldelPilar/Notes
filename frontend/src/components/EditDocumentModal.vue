@@ -3,7 +3,7 @@
     <h2>Edit {{ store.editDoc.title }}</h2>
     <Editor
       v-model="content"
-      api-key="jn9wfzba5gpr27fwv0bnhl3n15i2xa1mher3ageh9iwtr91o"
+      api-key=""
       ref="editorRef"
       :init="initConfig"
       id="editEditor"
