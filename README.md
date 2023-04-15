@@ -62,6 +62,7 @@ Now you should get a success message saying: `Connected to the database with ID 
 
 - Vue.js 3
 - Pinia & vue router
+- Vite
 - TinyMCE for vue 3
 - CSS 3
 - prettier
