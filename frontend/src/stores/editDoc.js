@@ -5,7 +5,8 @@ export const useEditDocStore = defineStore('editDoc', {
     editDoc: {
       title: '',
       body: '',
-      author: ''
+      author: '',
+      id: ''
     },
   }),
 })

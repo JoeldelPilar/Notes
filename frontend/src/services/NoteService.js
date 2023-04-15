@@ -24,5 +24,9 @@ export default {
 
   saveDocument(document) {
     return apiClient.post('/documents', document)
+  },
+
+  updateDocument(update) {
+    return apiClient.put('/documents', update)
   }
 }

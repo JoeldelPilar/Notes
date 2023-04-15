@@ -14,7 +14,7 @@
     </form>
   </div>
 
-  <div v-if="!showLogin">{{ loginMessage }}</div>
+  <div class="login-msg" v-if="!showLogin">{{ loginMessage }}</div>
 </template>
 
 <script setup>
@@ -58,5 +58,39 @@ async function login() {
   clip: rect(0, 0, 0, 0) !important;
   white-space: nowrap !important;
   border: 0 !important;
+}
+
+button {
+  margin-inline-start: 1rem;
+  padding-inline: 2.5rem;
+  padding-block: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  background-color: #6ccc6c;
+  color: #222b23;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  box-shadow: 2px 2px 4px rgba(255, 250, 250, 0.233);
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+#user-email {
+  padding: 0.25rem;
+}
+
+.login-msg {
+  margin-block-start: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #6ccc6c;
 }
 </style>

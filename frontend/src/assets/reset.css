@@ -5,6 +5,12 @@
   box-sizing: border-box;
 }
 
+/* set default font family */
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 /* Remove default margin */
 body,
 h1,

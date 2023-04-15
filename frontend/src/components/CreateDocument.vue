@@ -1,20 +1,22 @@
 <template>
-  <div class="tinymce">
-    <label for="titleInput" class="visually-hidden">Enter document title here</label>
-    <input v-model="title" id="titleInput" type="text" placeholder="Document title here..." />
-    <Editor
-      v-model="content"
-      api-key="jn9wfzba5gpr27fwv0bnhl3n15i2xa1mher3ageh9iwtr91o"
-      ref="editorRef"
-      :init="initConfig"
-      id="tinyEditor"
-    />
-  </div>
+  <article class="tiny-container">
+    <div class="tinymce">
+      <label for="titleInput" class="visually-hidden">Enter document title here</label>
+      <input v-model="title" id="titleInput" type="text" placeholder="Document title here..." />
+      <Editor
+        v-model="content"
+        api-key="jn9wfzba5gpr27fwv0bnhl3n15i2xa1mher3ageh9iwtr91o"
+        ref="editorRef"
+        :init="initConfig"
+        id="tinyEditor"
+      />
+    </div>
 
-  <div class="button-container">
-    <button class="actionBtn" @click="clearEditorContent">Clear</button>
-    <button class="actionBtn" @click="saveEditorContent">Save</button>
-  </div>
+    <div class="button-container">
+      <button class="actionBtn" @click="clearEditorContent">Clear</button>
+      <button class="actionBtn" @click="saveEditorContent">Save</button>
+    </div>
+  </article>
 </template>
 
 <script setup>
@@ -123,5 +125,11 @@ async function saveEditorContent() {
 
 .button-container:first-child {
   background-color: rgb(221, 133, 133);
+}
+
+.tiny-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

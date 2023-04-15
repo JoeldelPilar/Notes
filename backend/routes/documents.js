@@ -57,4 +57,30 @@ router.post('/', (req, res) => {
 
 });
 
+// Update document
+
+router.put('/', (req, res) => {
+
+  const updateToBody = connection.escape(req.body.text);
+  const textId = connection.escape(req.body.id);
+
+  connection.connect((err) => {
+    if (err) {
+      console.log('error: ', err);
+    }
+
+    const sql = `UPDATE documents SET body = ${updateToBody} WHERE id = ${textId}`
+
+    connection.query(sql, (err, data) => {
+      if (err) {
+        console.log('error: ', err);
+        res.status(500).json({ message: 'Error updating document' });
+      } else {
+        res.status(200).json({ message: 'Document updated' });
+      }
+    })
+
+  });
+});
+
 module.exports = router;
