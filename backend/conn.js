@@ -13,7 +13,7 @@ connection.connect(function (err) {
     console.error('Fel vid anslutning till databasen: ' + err.stack);
     return;
   }
-  console.log('Ansluten till databasen med ID ' + connection.threadId);
+  console.log('Connected to the database with ID ' + connection.threadId);
 });
 
 
