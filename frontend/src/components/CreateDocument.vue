@@ -4,6 +4,7 @@
       <label for="titleInput" class="visually-hidden">Enter document title here</label>
       <input v-model="title" id="titleInput" type="text" placeholder="Document title here..." />
       <Editor v-model="content" api-key="" ref="editorRef" :init="initConfig" id="tinyEditor" />
+      <span class="errorMsg">{{ errorMsg }}</span>
     </div>
 
     <div class="button-container">
@@ -28,10 +29,11 @@ const store = useDocsCollectionStore()
 
 const title = ref('')
 const content = ref('')
+const errorMsg = ref('')
 
 const initConfig = {
   height: 500,
-  content_css: 'dark',
+  content_css: 'document',
   menubar: false,
   toolbar:
     'undo redo | styles | bold italic backcolor forecolor | \
@@ -63,7 +65,10 @@ async function saveEditorContent() {
     author: author
   }
 
-  console.log(document)
+  if (content.value === '' || title.value === '') {
+    errorMsg.value = 'Please enter a title and some content'
+    return
+  }
 
   await NoteService.saveDocument(document)
 
@@ -125,5 +130,11 @@ async function saveEditorContent() {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.errorMsg {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
 }
 </style>

@@ -59,4 +59,8 @@ ny användaren behöver den läggas in manuellt i databasen. Om tanken är att e
 <br>
 JTW som skickas till användarens mejl är gilltig i 1h, för att användaren ska hinna in på sin mejl men också för att appen körs i browsern och hur ofta har man inte råktat stänga ner ett fönster av misstag. <br>
 I detta fall behöver användaren inte göra om inloggingen utan bara klicka på länken i sin mejl, förutsatt då att det inte gått 1h. En bugg som kvarstår är att efter 1h, om man refreshar fönstret så får man <br>
-ett felmeddelande i konsolen som säger att token inte är giltig längre, dock funkar appen då användarens uuid finns sparat i LS och håller denne inloggad.
+ett felmeddelande i konsolen som säger att token inte är giltig längre, dock funkar appen då användarens uuid finns sparat i LS och håller denne inloggad.<br>
+<br>
+Efter demo med Lisa läste jag igenom beskrivningen igen och valde att alla kan se och redigera dokumenten, för att jag ser det som ett internt verktyg i en organisation, och så tolkar jag beskrivningen med efter <br>
+att läst igenom den igen. Den som skapat ett dokument är author av det och jag valde att behålla det så istället för att uppdatera author när det redigerats. Vill man ändra detta behöver man bara uppdatera <br>
+queryn i backend så att den uppdaterar author med det inloggade uuid:et.

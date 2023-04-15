@@ -24,7 +24,7 @@ const content = editDoc.value.body
 const initConfig = {
   height: 500,
   content: editDoc.value.body,
-  content_css: 'dark',
+  content_css: 'document',
   menubar: false,
   toolbar:
     'undo redo | styles | bold italic backcolor forecolor | \
