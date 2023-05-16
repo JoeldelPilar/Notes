@@ -12,6 +12,10 @@ if it was to solve a issue or if any issues appeared because of them and how it 
 
 ## Get up and running
 
+\*DISCLAIMER\*
+This project uses send grid for login with email and magic link. You need to setup your own .env with credentials for the login to work.
+\*DISCLAIMER\*
+
 To get the app started for demo just follow the steps listed below. <br>
 <br>
 One note about TinyMCE warning, it shows upp if there is no api-key provided in the `Editor` tag <br>
